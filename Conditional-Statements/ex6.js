@@ -1,4 +1,4 @@
-let year = 2000;
+let year = 200;
 
 if(year % 4 === 0){
   if(year % 100 === 0){
