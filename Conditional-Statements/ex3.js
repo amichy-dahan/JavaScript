@@ -1,6 +1,6 @@
 
 
-let temperature = 13;
+let temperature = 24;
 let weather = "cloudy";
 
 if( weather === "sunny" && temperature > 24){
