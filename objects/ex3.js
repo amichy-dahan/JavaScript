@@ -1,28 +1,22 @@
 const reservations = {
-  Bob: { claimed: false ,
-    fname:"Bob",
-
+  bob: { claimed: false ,
   },
-  Ted: { claimed: true,
-    fname: "Ted",
-
+  ted: { claimed: true,
    }
 }
 
-let client = "Bob";
-const name1 = reservations.Bob;
-
-
-
-console.log(name1.claimed);
-
-if (name1 === undefined) {
-   console.log("there is nothing under their name")
+let client = "BoB";
+const name1 = client.toLowerCase();
+if (reservations[name1] === undefined) {
+         reservations[name1] = {claimed: true,}
+         console.log("claimed");
+  
 }else{
-     if( name1.claimed === true ){
+     if( reservations[name1].claimed === true ){
             console.log("Hmm, someone already claimed this reservation")
      }else{
-            console.log("Welcome " + name1.fname)
-       
+            console.log("Welcome ")
+    
      }
 }
+console.log(reservations)
