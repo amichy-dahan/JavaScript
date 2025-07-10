@@ -7,9 +7,9 @@ let cartItems = [
 ]
 
 let taxRates = {
-    clothing: 0.08,    // 8% tax
-    electronics: 0.10, // 10% tax  
-    food: 0.05        // 5% tax
+    clothing: 0.08,    
+    electronics: 0.10, 
+    food: 0.05      
 }
 
 
