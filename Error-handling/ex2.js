@@ -2,27 +2,25 @@ const fs  = require("fs");
 
 
 
-function readFileWithErrorHandling(filep, callback) {
-  fs.readFile(filep, (err, data) => {
+function readFileWithErrorHandling(file, callback) {
+    
+  fs.readFile(file, (err, data) => {
     if (err) {
-      console.log("DEBUG: שגיאה בזיהוי הקובץ");
-      console.log("שגיאה:", err.code); // הדפסת קוד השגיאה
-      if (err.code === 'ENOENT') {
-        callback("❌ שגיאה: הקובץ לא נמצא.");
-      } else if (err.code === 'EISDIR') {
-        callback("❌ שגיאה: מדובר בתיקייה, לא בקובץ.");
-      } else {
-        callback("❌ שגיאה כללית: " + err.message);
-      }
-    } else {
-      console.log("DEBUG: הקריאה הצליחה"); // תוודא שהצליחה
-      callback(`✅ קובץ נקרא בהצלחה. גודל: ${data.length} בתים`);
+           if(err.code){
+            console.log(err.code)
+           }else if(err.errno){
+           
+            console.log(err.cause.message)
+           }
+     } else {
+      
+      callback(` ${data.length} `);
     }
   });
 }
 
 
-readFileWithErrorHandling('data.text', (result) => {
+readFileWithErrorHandling('data.txt', (result) => {
       console.log(result)
 });
 
