@@ -9,7 +9,11 @@ add(item) {
 
 if(this.cart.length ===0){
     this.cart.push(item);
-}else if (this.cart.some(a => a.name ===item.name)){
+}else if (typeof item === "object" ){
+         if(this.cart.some(a => a.name ===item.name)){
+            
+         }
+} else if (this.cart.some(a => a ===item)){
 
 }else{
   this.cart.push(item);
