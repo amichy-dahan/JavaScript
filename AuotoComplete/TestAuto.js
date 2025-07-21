@@ -10,4 +10,4 @@ a.addWord("care")
 
 
 console.log(a.findWord("card"));
-a.predictWords("");
+console.log(a.predictWords("ca"));

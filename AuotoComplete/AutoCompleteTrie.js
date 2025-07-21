@@ -41,7 +41,7 @@ class AutoCompleteTrie {
         predictWords(prefix) {
               let arr =[];
               let root = this;
-              let text = 
+              let text ='' ;
               prefix = prefix.toLowerCase();
               let cal = 0;
                while(cal < prefix.length){
@@ -49,12 +49,16 @@ class AutoCompleteTrie {
                 console.log("dont Exist");
                 break;
                } else{
-                  root = root.children[prefix[cal]] // im down from the root to the next child with the current word , and work with him
-                  cal++;
+                 
+                root = root.children[prefix[cal]] // im down from the root to the next child with the current word , and work with him
+                text+=prefix[cal];
+                cal++;
                }   
             }
             
-            
+            for (const key in root.children) {
+                console.log(root.children[key])
+            }
 
         }
 }
