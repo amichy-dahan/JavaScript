@@ -20,24 +20,42 @@ class AutoCompleteTrie {
 
         findWord(word){
             word = word.toLowerCase();
-            let type = word.length;
             let root = this;
-            let s = false;
+            let bool = false;
             let cal = 0;
-              while(cal < type){
+              while(cal < word.length){
                if(!root.children[word[cal]]){
-                return s;
+                return bool;
                } else{
-            
-                    root = root.children[word[cal]]
+                    root = root.children[word[cal]] // im down from the root to the next child with the current word , and work with him
                   cal++;
                  if(root.endOfWord ===true && cal === word.length){
-                     s =true ;
+                     bool =true ;
                 }
-                  
                }   
             }
-            return s;
+            return bool;
+        }
+
+
+        predictWords(prefix) {
+              let arr =[];
+              let root = this;
+              let text = 
+              prefix = prefix.toLowerCase();
+              let cal = 0;
+               while(cal < prefix.length){
+               if(!root.children[prefix[cal]]){
+                console.log("dont Exist");
+                break;
+               } else{
+                  root = root.children[prefix[cal]] // im down from the root to the next child with the current word , and work with him
+                  cal++;
+               }   
+            }
+            
+            
+
         }
 }
 
