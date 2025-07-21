@@ -19,6 +19,7 @@ class AutoCompleteTrie {
 
 
         findWord(word){
+            word = word.toLowerCase();
             let type = word.length;
             let root = this;
             let s = false;

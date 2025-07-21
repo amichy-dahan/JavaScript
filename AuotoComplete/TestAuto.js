@@ -6,4 +6,4 @@ a.addWord("cat")
 
 
 
-console.log(a.findWord("Cat"));
+console.log(a.findWord("CAT"));
