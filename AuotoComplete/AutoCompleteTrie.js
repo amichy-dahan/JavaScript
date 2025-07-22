@@ -37,31 +37,58 @@ class AutoCompleteTrie {
             return bool;
         }
 
-
-        predictWords(prefix) {
-              let arr =[];
-              let root = this;
-              let text ='' ;
+        
+              
+                
+        _getRemainingTree(prefix, node){
+              node = this;
               prefix = prefix.toLowerCase();
               let cal = 0;
                while(cal < prefix.length){
-               if(!root.children[prefix[cal]]){
-                console.log("dont Exist");
-                break;
+               if(!node.children[prefix[cal]]){
+                return null
                } else{
-                 
-                root = root.children[prefix[cal]] // im down from the root to the next child with the current word , and work with him
-                text+=prefix[cal];
+                node = node.children[prefix[cal]] // im down from the root to the next child with the current word , and work with him
                 cal++;
                }   
             }
+            return node;
+        }
+
+
+
+        _allWordsHelper(prefix, node, allWords){
             
-            for (const key in root.children) {
-                console.log(root.children[key])
+           if(node.endOfWord){
+              allWords.push(prefix)
+           }
+            for (let char in node.children) {
+              this._allWordsHelper(prefix + char , node.children[char] , allWords)
             }
 
+            return allWords;
+          }
+
+      
+
+
+                
+        predictWords(prefix) {
+              let node = this._getRemainingTree(prefix);
+              let allWords =[];
+              let arr = this._allWordsHelper(prefix, node, allWords)
+              if(arr.length ===0){
+                return;
+              }
+
+              return arr;
         }
-}
+
+      }
+
+        
+
 
 
 module.exports = AutoCompleteTrie;
+
