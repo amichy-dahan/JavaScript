@@ -21,10 +21,3 @@ rl.question("What is your name?\n", fname => {
     });
 });
 
-// console.log(`Hello ${fname}, you are ${age} years old`);
-
-// Registration Summary:
-// Name: John Doe
-// Email: john@example.com
-// Age: 25
-// Favorite Color: Blue
