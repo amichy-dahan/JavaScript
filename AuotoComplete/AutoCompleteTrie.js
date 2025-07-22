@@ -48,7 +48,7 @@ class AutoCompleteTrie {
                if(!node.children[prefix[cal]]){
                 return null
                } else{
-                node = node.children[prefix[cal]] // im down from the root to the next child with the current word , and work with him
+                node = node.children[prefix[cal]] 
                 cal++;
                }   
             }
