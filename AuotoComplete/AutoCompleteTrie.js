@@ -8,6 +8,7 @@ class AutoCompleteTrie {
  addWord(str) {
 
     let root = this
+    if(str !== ""){
          for (const char of str) {
             if(!root.children[char]){
                 root.children[char] = new AutoCompleteTrie(char);
@@ -15,6 +16,10 @@ class AutoCompleteTrie {
             root = root.children[char]
          }
     root.endOfWord = true;
+    return true
+      }else{
+       return false;
+      }
  }
 
 
@@ -75,12 +80,10 @@ class AutoCompleteTrie {
                 
         predictWords(prefix) {
               let node = this._getRemainingTree(prefix);
+               if (!node) return []; 
               let allWords =[];
               let arr = this._allWordsHelper(prefix, node, allWords)
-              if(arr.length ===0){
-                return;
-              }
-
+      
               return arr;
         }
 
