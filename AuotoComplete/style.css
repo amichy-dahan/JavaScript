@@ -1,0 +1,101 @@
+#container{
+   background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 300px;
+   
+    display: flex;
+    flex-direction: column;
+}
+
+#inAndBt{
+ display: flex;
+ justify-content: center;
+
+ width: 100%;
+}
+
+#in{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgb(226, 223, 223);
+    
+}
+#btn{
+    width: 20%;
+    margin-left: 5px;
+    background-color: rgb(74, 139, 252);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+#singleIn{
+
+
+ padding-top: 10px;
+ width: 100%;
+}
+#in2{
+    padding: 10px;
+    width: 96%;
+    border-radius: 10px;
+    border: 2px solid rgb(226, 223, 223);
+    margin-top: 5px;
+    
+}
+
+#text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    margin-top: 10px;
+    
+}
+#p2{
+    margin-top: -30px;
+    
+}
+#p1{
+    margin-top: 20px;
+    font-size:30px ;
+    
+}
+
+#inline{
+
+    width: 100%;
+    text-align: center;
+    background-color: rgb(191, 240, 136);
+   
+    margin-top: 10px;
+    border-radius: 10px;
+}
+#suggestions {
+  list-style: none;
+  border: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  width:77%;
+  background: white;
+  position: absolute;
+  border-top: none;
+  border-radius: 3px;
+  
+}
+
+#suggestions li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom:1px solid  gray;
+  border-radius: 3px;
+}
+
+#suggestions li:hover {
+  background: #eee;
+}
